@@ -7,17 +7,17 @@ const App = () => {
   const [weather, setWeather] = useState({})
 
   // Fetch data on input
-
   const search = async (e) => {
     if (e.key === 'Enter') {
       const data = await fetchWeather(query)
-      setWeather(data)
+      if (data !== false) setWeather(data)
+      else if (data === false)
+        alert(`Location ${query} not found. Please enter another location`)
       setQuery('')
     }
   }
 
   // Location time
-
   let currentLocationTime
 
   if (weather)
