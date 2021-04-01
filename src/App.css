@@ -1,38 +1,167 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+.app {
+  height: 100vh;
+}
+
+/* App Background */
+
+:root {
+  --bg-arctic-day: url(./assets/arctic-day.svg);
+  --bg-tundra-day: url(./assets/tundra-day.svg);
+  --bg-forest-day: url(./assets/forest-day.svg);
+  --bg-tropics-day: url(./assets/tropics-day.svg);
+  --bg-desert-day: url(./assets/desert-day.svg);
+  --menu-bg: #e1e1e1;
+  --menu-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  --menu-border: none;
+}
+
+@supports (backdrop-filter: blur(40px)) {
+  :root {
+    --menu-bg: rgba(255, 255, 255, 0.2);
+    --menu-box-shadow: none;
+    --menu-border: solid 2px transparent;
+  }
+}
+
+.bg-arctic-day {
+  height: 100%;
+  background: var(--bg-arctic-day);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
+}
+
+.bg-tundra-day {
+  height: 100%;
+  background: var(--bg-tundra-day);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
+}
+
+.bg-forest-day {
+  height: 100%;
+  background: var(--bg-forest-day);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
+}
+
+.bg-tropics-day {
+  height: 100%;
+  background: var(--bg-tropics-day);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
+}
+
+.bg-desert-day {
+  height: 100%;
+  background: var(--bg-desert-day);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
+}
+
+/* App Widgets */
+
+.main-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* Search Bar */
+
+.search-bar {
+  width: 100%;
+  padding: 0.5em;
+  outline: none;
+  background: var(--menu-bg);
+  backdrop-filter: blur(40px);
+  border: var(--menu-border);
+  background-clip: padding-box;
+  border-radius: 1em;
+  box-shadow: var(--menu-box-shadow);
+}
+
+/* Main Display */
+
+.location-box {
+  margin-top: 20vh;
+  width: 100%;
+  padding: 1em;
+  outline: none;
+  background: var(--menu-bg);
+  backdrop-filter: blur(40px);
+  border: var(--menu-border);
+  background-clip: padding-box;
+  border-radius: 1.25em;
   text-align: center;
+  box-shadow: var(--menu-box-shadow);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.location-name {
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h5 {
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.location-name sup {
+  font-size: 0.5em;
+  padding: 0.2em 0.6em;
+  margin-left: 0.2em;
+  border-radius: 30px;
+  color: #fff;
+  background: #ff8c00;
 }
 
-.App-link {
-  color: #61dafb;
+.info {
+  margin-top: 0.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.current-weather {
+  text-transform: capitalize;
+}
+
+.current-time {
+  margin: 1em 0;
+}
+
+.temp-details {
+  margin-top: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+}
+
+.other-details {
+  margin-top: 1.5em;
+  padding-bottom: 0.25em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+}
+
+@media (min-width: 450px) {
+  body {
+    font-size: 1.25rem;
   }
 }
