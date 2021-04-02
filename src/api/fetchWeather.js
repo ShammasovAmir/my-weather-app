@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const URL = 'https://api.openweathermap.org/data/2.5/weather'
-const API_KEY = nono
+const { REACT_APP_WEATHER_KEY } = process.env
+const API_KEY = REACT_APP_WEATHER_KEY
 
 const fetchWeather = async (query) => {
   try {
